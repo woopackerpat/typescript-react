@@ -8,7 +8,11 @@ import {
 import { Todo } from "../@types/todo.types";
 import axios from "../config/axios";
 
-interface TodoContextValue {}
+interface TodoContextValue {
+  todos: Todo[];
+  onAddTodo: (todo: Partial<Todo>) => Promise<void>;
+  onDeleteTodo: (id: number) => Promise<void>;
+}
 
 const TodoContext = createContext<TodoContextValue | null>(null);
 
@@ -47,7 +51,7 @@ function TodoContextProvider({ children }: TodoContextProps) {
     fetchTodos();
   }, []);
 
-  const value = {};
+  const value = { todos, onAddTodo, onDeleteTodo };
 
   return <TodoContext.Provider value={value}>{children}</TodoContext.Provider>;
 }

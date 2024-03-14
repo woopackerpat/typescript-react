@@ -1,12 +1,15 @@
 import React, { FormEvent, useState } from "react";
 import { Todo } from "../@types/todo.types";
+import { useTodo } from "../context/TodoContext";
 
-interface AddFormProps {
-  onAddTodo: (todo: Partial<Todo>) => Promise<void>;
-}
+// interface AddFormProps {
+//   onAddTodo: (todo: Partial<Todo>) => Promise<void>;
+// }
 
-function AddForm({ onAddTodo }: AddFormProps) {
+function AddForm() {
   const [title, setTitle] = useState<string>("");
+
+  const { onAddTodo } = useTodo();
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
