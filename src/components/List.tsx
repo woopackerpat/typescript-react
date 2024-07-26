@@ -1,5 +1,4 @@
 import ListItem from "./ListItem";
-import { Todo } from "../@types/todo.types";
 import { useTodo } from "../context/TodoContext";
 
 // interface ListProps {

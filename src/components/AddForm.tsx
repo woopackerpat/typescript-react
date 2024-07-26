@@ -1,5 +1,4 @@
-import React, { FormEvent, useState } from "react";
-import { Todo } from "../@types/todo.types";
+import  { FormEvent, useState } from "react";
 import { useTodo } from "../context/TodoContext";
 
 // interface AddFormProps {
